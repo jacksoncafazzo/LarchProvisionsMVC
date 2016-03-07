@@ -8,6 +8,13 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm())
+    {
+        <p> Ingredient Name: @Html.TextBox("SearchString") 
+        <br />
+        <input type="submit" value="Search"  /></p>
+    }
 </p>
 <table class="table">
     <tr>

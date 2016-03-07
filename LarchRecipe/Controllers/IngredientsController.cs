@@ -15,9 +15,17 @@ namespace LarchRecipe.Controllers
         private IngredientDBContext db = new IngredientDBContext();
 
         // GET: Ingredients
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Ingredients.ToList());
+            var ingredients = from i in db.Ingredients
+                              select i;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                ingredients = ingredients.Where(s => s.Name.Contains(searchString));
+            }
+
+            return View(ingredients);
         }
 
         // GET: Ingredients/Details/5
