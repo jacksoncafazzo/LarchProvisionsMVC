@@ -13,6 +13,7 @@ namespace LarchRecipe.Models
         public string Description { get; set; }
         public string Notes { get; set; }
         public int Servings { get; set; }
+       
     }
 
     public class RecipeDBContext : DbContext

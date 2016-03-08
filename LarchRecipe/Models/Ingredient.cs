@@ -15,6 +15,7 @@ namespace LarchRecipe.Models
         public double Amount { get; set; }
         public string Unit { get; set; }
         public int RecipeId { get; set; }
+        
     }
 
     public class IngredientDBContext : DbContext
