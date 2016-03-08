@@ -4,10 +4,17 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Recipe Ingredients</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm())
+    {
+        <p> Ingredient Name: @Html.TextBox("SearchString") 
+        <br />
+        <input type="submit" value="Search"  /></p>
+    }
 </p>
 <table class="table">
     <tr>
